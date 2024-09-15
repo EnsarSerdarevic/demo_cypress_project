@@ -5,9 +5,7 @@ describe('Odjava korisnika', () => {
       cy.visit('https://www.saucedemo.com/')
       
       // Prijava s validnim korisničkim podacima
-      cy.get('[data-test="username"]').type('standard_user')
-      cy.get('[data-test="password"]').type('secret_sauce')
-      cy.get('[data-test="login-button"]').click()
+      cy.login('problem_user');
   
       // Provjera da je korisnik preusmjeren na inventar stranicu
       cy.url().should('include', '/inventory.html')
